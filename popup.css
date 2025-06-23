@@ -99,3 +99,17 @@ body {
 .copy-btn.clicked {
   background-color: #28a745 !important;
 }
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 12px;
+  padding-top: 8px;
+  color: #555;
+  width: 100%;
+}
+
+/* Dark mode footer color */
+.dark-mode .footer {
+  color: #aaa;
+}
