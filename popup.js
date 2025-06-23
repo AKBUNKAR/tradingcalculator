@@ -35,7 +35,7 @@ function calculate() {
   saveValues();
 }
 
-// Save values
+// Save values to storage
 function saveValues() {
   chrome.storage.local.set({
     entryPrice: entryPriceInput.value,
@@ -47,7 +47,7 @@ function saveValues() {
   });
 }
 
-// Load values
+// Load stored values
 function loadValues() {
   chrome.storage.local.get([
     "entryPrice", "slPoints", "targetPoints",
@@ -59,6 +59,7 @@ function loadValues() {
     if (result.tslPoints) tslPointsInput.value = result.tslPoints;
     if (result.tslTriggerPoints) tslTriggerPointsInput.value = result.tslTriggerPoints;
     if (result.strick) strickInput.value = result.strick;
+
     calculate();
   });
 
@@ -73,7 +74,34 @@ function loadValues() {
   toggleIcon.classList.toggle("fa-arrow-down", !isPointsHidden);
 }
 
-// Copy
+// Input events
+[
+  entryPriceInput,
+  slPointsInput,
+  targetPointsInput,
+  tslPointsInput,
+  tslTriggerPointsInput,
+  strickInput
+].forEach(input => input.addEventListener("input", calculate));
+
+// Dark mode toggle
+toggleModeButton.addEventListener("click", () => {
+  const isDarkMode = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode);
+  modeIcon.classList.toggle("fa-sun", isDarkMode);
+  modeIcon.classList.toggle("fa-moon", !isDarkMode);
+});
+
+// Hide/show points section
+togglePointsButton.addEventListener("click", () => {
+  const isHidden = pointsSection.classList.contains("hidden");
+  pointsSection.classList.toggle("hidden", !isHidden);
+  toggleIcon.classList.toggle("fa-arrow-down", isHidden);
+  toggleIcon.classList.toggle("fa-arrow-up", !isHidden);
+  localStorage.setItem("pointsHidden", !isHidden);
+});
+
+// Copy with animation
 function copyToClipboard(inputId) {
   const input = document.getElementById(inputId);
   const value = input.value;
@@ -84,36 +112,13 @@ function copyToClipboard(inputId) {
       setTimeout(() => {
         button.classList.remove("clicked");
       }, 300);
-    }).catch(err => console.error("Copy failed:", err));
+    }).catch(err => {
+      console.error("Copy failed:", err);
+    });
   }
 }
 
-// Event listeners
-[
-  entryPriceInput,
-  slPointsInput,
-  targetPointsInput,
-  tslPointsInput,
-  tslTriggerPointsInput,
-  strickInput
-].forEach(input => input.addEventListener("input", calculate));
-
-toggleModeButton.addEventListener("click", () => {
-  const isDarkMode = document.body.classList.toggle("dark-mode");
-  localStorage.setItem("darkMode", isDarkMode);
-  modeIcon.classList.toggle("fa-sun", isDarkMode);
-  modeIcon.classList.toggle("fa-moon", !isDarkMode);
-});
-
-togglePointsButton.addEventListener("click", () => {
-  const isHidden = pointsSection.classList.contains("hidden");
-  pointsSection.classList.toggle("hidden", !isHidden);
-  toggleIcon.classList.toggle("fa-arrow-down", isHidden);
-  toggleIcon.classList.toggle("fa-arrow-up", !isHidden);
-  localStorage.setItem("pointsHidden", !isHidden);
-});
-
-// Copy buttons
+// Add copy button listeners
 [
   "strick",
   "entryPrice",
@@ -128,8 +133,23 @@ togglePointsButton.addEventListener("click", () => {
   }
 });
 
-// Load on startup
+// Ensure wrapper is vertically centered
+function centerContent() {
+  const wrapper = document.querySelector('.wrapper');
+  if (wrapper) {
+    const vh = window.innerHeight;
+    wrapper.style.minHeight = vh + 'px';
+    wrapper.style.display = 'flex';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.justifyContent = 'center';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.padding = '16px';
+  }
+}
+
+// Load on open
 window.addEventListener("DOMContentLoaded", () => {
   loadValues();
- document.getElementById("footer").textContent =
-  `© ${new Date().getFullYear()} All Rights Reserved by Abhishek Bunkar`;
+  centerContent();
+});
+window.addEventListener("resize", centerContent);
