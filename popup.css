@@ -1,20 +1,39 @@
+/* Body Centering and Theme */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 16px;
   background-color: #fff;
   color: #000;
+
+  /* Center layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* Dark mode support */
 .dark-mode {
   background-color: #1e1e1e;
   color: #f1f1f1;
 }
 
+/* Container Styling */
 .container {
   max-width: 350px;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .container {
+  background-color: #2a2a2a;
+}
+
+/* Row Styling */
 .row {
   display: flex;
   align-items: center;
@@ -22,11 +41,13 @@ body {
   margin-bottom: 12px;
 }
 
+/* Labels */
 .row label {
   flex: 2;
   font-weight: bold;
 }
 
+/* Input Field Group */
 .input-wrapper {
   flex: 1;
   display: flex;
@@ -39,6 +60,7 @@ body {
   font-size: 14px;
 }
 
+/* Copy Button Styling */
 .copy-btn {
   margin-left: 6px;
   padding: 6px 8px;
@@ -47,12 +69,33 @@ body {
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* On click animation (green flash) */
+.copy-btn.clicked {
+  background-color: #28a745 !important;
 }
 
 .copy-btn:hover {
   background-color: #0056b3;
 }
 
+/* Dark mode copy button */
+.dark-mode .copy-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode .copy-btn:hover {
+  background-color: #666;
+}
+
+.dark-mode .copy-btn.clicked {
+  background-color: #28a745 !important;
+}
+
+/* Toggle Section (dark mode + hide/show) */
 .toggle-section {
   display: flex;
   justify-content: space-between;
@@ -67,41 +110,14 @@ body {
   color: inherit;
 }
 
+/* Hidden Sections (SL/Target/TSL rows) */
 .hidden {
   display: none;
 }
 
-/* Dark mode adjustments */
+/* Dark Mode Input Fields */
 .dark-mode input {
   background-color: #2c2c2c;
   color: #ffffff;
   border: 1px solid #555;
-}
-
-.dark-mode .copy-btn {
-  background-color: #444;
-  color: #fff;
-}
-
-.dark-mode .copy-btn:hover {
-  background-color: #666;
-}
-
-.copy-btn {
-  margin-left: 6px;
-  padding: 6px 8px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.copy-btn.clicked {
-  background-color: #28a745 !important; /* Green/blue effect when clicked */
-}
-
-.copy-btn:hover {
-  background-color: #0056b3;
 }
