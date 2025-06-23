@@ -10,111 +10,95 @@
 <body>
   <div class="container">
 
-    <!-- ✅ Strick input (accepts text) -->
+    <!-- Strick -->
     <div class="row">
       <label for="strick">Strick</label>
       <div class="input-wrapper">
         <input type="text" id="strick" />
-        <button class="copy-btn" id="copy-strick">
-          <i class="fas fa-copy"></i>
-        </button>
+        <button class="copy-btn" id="copy-strick"><i class="fas fa-copy"></i></button>
       </div>
     </div>
 
-    <!-- ✅ Entry Price -->
+    <!-- Entry Price -->
     <div class="row">
       <label for="entryPrice">Entry Price</label>
       <div class="input-wrapper">
         <input type="number" id="entryPrice" />
-        <button class="copy-btn" id="copy-entryPrice">
-          <i class="fas fa-copy"></i>
-        </button>
+        <button class="copy-btn" id="copy-entryPrice"><i class="fas fa-copy"></i></button>
       </div>
     </div>
 
-    <!-- ✅ Hidden section -->
-    <div id="points-section">
+    <!-- SL/Target Section -->
+    <div id="points-section" class="hideable">
       <div class="row">
         <label for="slPoints">SL Points</label>
         <div class="input-wrapper">
           <input type="number" id="slPoints" />
         </div>
       </div>
-
       <div class="row">
         <label for="targetPoints">Target Points</label>
         <div class="input-wrapper">
           <input type="number" id="targetPoints" />
         </div>
       </div>
+    </div>
 
+    <!-- SL Price -->
+    <div class="row">
+      <label for="slPrice">SL Price</label>
+      <div class="input-wrapper">
+        <input type="text" id="slPrice" readonly />
+        <button class="copy-btn" id="copy-slPrice"><i class="fas fa-copy"></i></button>
+      </div>
+    </div>
+
+    <!-- Target Price -->
+    <div class="row">
+      <label for="targetPrice">Target Price</label>
+      <div class="input-wrapper">
+        <input type="text" id="targetPrice" readonly />
+        <button class="copy-btn" id="copy-targetPrice"><i class="fas fa-copy"></i></button>
+      </div>
+    </div>
+
+    <!-- TSL Section -->
+    <div id="tsl-section" class="hideable hidden">
       <div class="row">
         <label for="tslPoints">TSL Points</label>
         <div class="input-wrapper">
           <input type="number" id="tslPoints" />
+          <button class="copy-btn" id="copy-tslPoints"><i class="fas fa-copy"></i></button>
         </div>
       </div>
-
       <div class="row">
-        <label for="tslTriggerPoints">TSL Trigger Points</label>
+        <label for="tslTrigger">TSL Trigger</label>
         <div class="input-wrapper">
-          <input type="number" id="tslTriggerPoints" />
+          <input type="number" id="tslTrigger" />
+          <button class="copy-btn" id="copy-tslTrigger"><i class="fas fa-copy"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <label for="tslPrice">TSL Price</label>
+        <div class="input-wrapper">
+          <input type="text" id="tslPrice" readonly />
+          <button class="copy-btn" id="copy-tslPrice"><i class="fas fa-copy"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <label for="tslTriggerPrice">TSL Trigger Price</label>
+        <div class="input-wrapper">
+          <input type="text" id="tslTriggerPrice" readonly />
+          <button class="copy-btn" id="copy-tslTriggerPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
     </div>
 
-    <!-- ✅ SL Price -->
-    <div class="row">
-      <label for="slPrice">SL Price</label>
-      <div class="input-wrapper">
-        <input type="text" id="slPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-slPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Target Price -->
-    <div class="row">
-      <label for="targetPrice">Target Price</label>
-      <div class="input-wrapper">
-        <input type="text" id="targetPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-targetPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ TSL -->
-    <div class="row">
-      <label for="tslPrice">TSL</label>
-      <div class="input-wrapper">
-        <input type="text" id="tslPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-tslPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ TSL Trigger -->
-    <div class="row">
-      <label for="tslTriggerPrice">TSL Trigger</label>
-      <div class="input-wrapper">
-        <input type="text" id="tslTriggerPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-tslTriggerPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Toggle buttons -->
+    <!-- Toggles -->
     <div class="toggle-section">
-      <button id="toggle-mode" class="toggle-button">
-        <i id="mode-icon" class="fas fa-moon"></i>
-      </button>
-      <button id="toggle-points" class="toggle-button">
-        <i id="toggle-icon" class="fas fa-arrow-down"></i>
-      </button>
+      <button id="toggle-mode"><i id="mode-icon" class="fas fa-moon"></i></button>
+      <button id="toggle-points"><i id="toggle-icon" class="fas fa-eye-slash"></i></button>
+      <button id="toggle-tsl"><i id="toggle-tsl-icon" class="fas fa-eye-slash"></i></button>
     </div>
 
   </div>
