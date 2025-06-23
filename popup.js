@@ -131,5 +131,5 @@ togglePointsButton.addEventListener("click", () => {
 // Load on startup
 window.addEventListener("DOMContentLoaded", () => {
   loadValues();
-  document.getElementById("footer").textContent = `© ${new Date().getFullYear()} All Rights Reserved by Abhishek Bunkar`;
-});
+ document.getElementById("footer").textContent =
+  `© ${new Date().getFullYear()} All Rights Reserved by Abhishek Bunkar`;
