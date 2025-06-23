@@ -35,7 +35,7 @@ function calculate() {
   saveValues();
 }
 
-// Save values to storage
+// Save values
 function saveValues() {
   chrome.storage.local.set({
     entryPrice: entryPriceInput.value,
@@ -47,7 +47,7 @@ function saveValues() {
   });
 }
 
-// Load stored values
+// Load values
 function loadValues() {
   chrome.storage.local.get([
     "entryPrice", "slPoints", "targetPoints",
@@ -59,7 +59,6 @@ function loadValues() {
     if (result.tslPoints) tslPointsInput.value = result.tslPoints;
     if (result.tslTriggerPoints) tslTriggerPointsInput.value = result.tslTriggerPoints;
     if (result.strick) strickInput.value = result.strick;
-
     calculate();
   });
 
@@ -74,34 +73,7 @@ function loadValues() {
   toggleIcon.classList.toggle("fa-arrow-down", !isPointsHidden);
 }
 
-// Input events
-[
-  entryPriceInput,
-  slPointsInput,
-  targetPointsInput,
-  tslPointsInput,
-  tslTriggerPointsInput,
-  strickInput
-].forEach(input => input.addEventListener("input", calculate));
-
-// Dark mode toggle
-toggleModeButton.addEventListener("click", () => {
-  const isDarkMode = document.body.classList.toggle("dark-mode");
-  localStorage.setItem("darkMode", isDarkMode);
-  modeIcon.classList.toggle("fa-sun", isDarkMode);
-  modeIcon.classList.toggle("fa-moon", !isDarkMode);
-});
-
-// Hide/show points section
-togglePointsButton.addEventListener("click", () => {
-  const isHidden = pointsSection.classList.contains("hidden");
-  pointsSection.classList.toggle("hidden", !isHidden);
-  toggleIcon.classList.toggle("fa-arrow-down", isHidden);
-  toggleIcon.classList.toggle("fa-arrow-up", !isHidden);
-  localStorage.setItem("pointsHidden", !isHidden);
-});
-
-// Copy with animation
+// Copy
 function copyToClipboard(inputId) {
   const input = document.getElementById(inputId);
   const value = input.value;
@@ -112,13 +84,36 @@ function copyToClipboard(inputId) {
       setTimeout(() => {
         button.classList.remove("clicked");
       }, 300);
-    }).catch(err => {
-      console.error("Copy failed:", err);
-    });
+    }).catch(err => console.error("Copy failed:", err));
   }
 }
 
-// Add copy button listeners
+// Event listeners
+[
+  entryPriceInput,
+  slPointsInput,
+  targetPointsInput,
+  tslPointsInput,
+  tslTriggerPointsInput,
+  strickInput
+].forEach(input => input.addEventListener("input", calculate));
+
+toggleModeButton.addEventListener("click", () => {
+  const isDarkMode = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode);
+  modeIcon.classList.toggle("fa-sun", isDarkMode);
+  modeIcon.classList.toggle("fa-moon", !isDarkMode);
+});
+
+togglePointsButton.addEventListener("click", () => {
+  const isHidden = pointsSection.classList.contains("hidden");
+  pointsSection.classList.toggle("hidden", !isHidden);
+  toggleIcon.classList.toggle("fa-arrow-down", isHidden);
+  toggleIcon.classList.toggle("fa-arrow-up", !isHidden);
+  localStorage.setItem("pointsHidden", !isHidden);
+});
+
+// Copy buttons
 [
   "strick",
   "entryPrice",
@@ -133,12 +128,8 @@ function copyToClipboard(inputId) {
   }
 });
 
-// Load on open
+// Load on startup
 window.addEventListener("DOMContentLoaded", () => {
   loadValues();
-
-  // ✅ Auto-set footer year
-  const year = new Date().getFullYear();
-  document.getElementById("footer").textContent =
-    `© ${year} All Rights Reserved by Abhishek Bunkar`;
+  document.getElementById("footer").textContent = `© ${new Date().getFullYear()} All Rights Reserved by Abhishek Bunkar`;
 });
