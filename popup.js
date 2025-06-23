@@ -134,4 +134,11 @@ function copyToClipboard(inputId) {
 });
 
 // Load on open
-window.addEventListener("DOMContentLoaded", loadValues);
+window.addEventListener("DOMContentLoaded", () => {
+  loadValues();
+
+  // ✅ Auto-set footer year
+  const year = new Date().getFullYear();
+  document.getElementById("footer").textContent =
+    `© ${year} All Rights Reserved by Abhishek Bunkar`;
+});
