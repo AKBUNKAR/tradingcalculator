@@ -9,7 +9,13 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ Strick input -->
+
+    <!-- ✅ Header (no logo, only heading if needed) -->
+    <div class="heading">
+      Calculate Your SL
+    </div>
+
+    <!-- ✅ Inputs -->
     <div class="row">
       <label for="strick">Strick</label>
       <div class="input-wrapper">
@@ -20,35 +26,6 @@
       </div>
     </div>
 
-    <!-- ✅ Entry Price --><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trading Calculator</title>
-  <link rel="stylesheet" href="popup.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-</head>
-<body>
-  <div class="container">
-    <!-- ✅ Logo & Tagline -->
-    <div class="logo-container">
-      <img src="https://i.ibb.co/nmvtcY2/logo.png" alt="Logo" class="logo" />
-      <div class="tagline">Calculate Your SL</div>
-    </div>
-
-    <!-- ✅ Strick -->
-    <div class="row">
-      <label for="strick">Strick</label>
-      <div class="input-wrapper">
-        <input type="text" id="strick" />
-        <button class="copy-btn" id="copy-strick">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Entry Price -->
     <div class="row">
       <label for="entryPrice">Entry Price</label>
       <div class="input-wrapper">
@@ -59,7 +36,6 @@
       </div>
     </div>
 
-    <!-- ✅ Hidden Points Section -->
     <div id="points-section">
       <div class="row">
         <label for="slPoints">SL Points</label>
@@ -90,7 +66,7 @@
       </div>
     </div>
 
-    <!-- ✅ Output Fields -->
+    <!-- ✅ Calculated Outputs -->
     <div class="row">
       <label for="slPrice">SL Price</label>
       <div class="input-wrapper">
@@ -131,7 +107,7 @@
       </div>
     </div>
 
-    <!-- ✅ Toggle Buttons -->
+    <!-- ✅ Toggles -->
     <div class="toggle-section">
       <button id="toggle-mode" class="toggle-button">
         <i id="mode-icon" class="fas fa-moon"></i>
@@ -145,106 +121,6 @@
   <!-- ✅ Footer -->
   <div class="footer" id="footer"></div>
 
-  <script src="popup.js"></script>
-</body>
-</html>
-
-    <div class="row">
-      <label for="entryPrice">Entry Price</label>
-      <div class="input-wrapper">
-        <input type="number" id="entryPrice" />
-        <button class="copy-btn" id="copy-entryPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Hidden section -->
-    <div id="points-section">
-      <div class="row">
-        <label for="slPoints">SL Points</label>
-        <div class="input-wrapper">
-          <input type="number" id="slPoints" />
-        </div>
-      </div>
-
-      <div class="row">
-        <label for="targetPoints">Target Points</label>
-        <div class="input-wrapper">
-          <input type="number" id="targetPoints" />
-        </div>
-      </div>
-
-      <div class="row">
-        <label for="tslPoints">TSL Points</label>
-        <div class="input-wrapper">
-          <input type="number" id="tslPoints" />
-        </div>
-      </div>
-
-      <div class="row">
-        <label for="tslTriggerPoints">TSL Trigger Points</label>
-        <div class="input-wrapper">
-          <input type="number" id="tslTriggerPoints" />
-        </div>
-      </div>
-    </div>
-
-    <!-- ✅ SL Price -->
-    <div class="row">
-      <label for="slPrice">SL Price</label>
-      <div class="input-wrapper">
-        <input type="text" id="slPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-slPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Target Price -->
-    <div class="row">
-      <label for="targetPrice">Target Price</label>
-      <div class="input-wrapper">
-        <input type="text" id="targetPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-targetPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ TSL -->
-    <div class="row">
-      <label for="tslPrice">TSL</label>
-      <div class="input-wrapper">
-        <input type="text" id="tslPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-tslPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ TSL Trigger -->
-    <div class="row">
-      <label for="tslTriggerPrice">TSL Trigger</label>
-      <div class="input-wrapper">
-        <input type="text" id="tslTriggerPrice" readonly tabindex="-1" />
-        <button class="copy-btn" id="copy-tslTriggerPrice">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ✅ Toggle buttons -->
-    <div class="toggle-section">
-      <button id="toggle-mode" class="toggle-button">
-        <i id="mode-icon" class="fas fa-moon"></i>
-      </button>
-      <button id="toggle-points" class="toggle-button">
-        <i id="toggle-icon" class="fas fa-arrow-down"></i>
-      </button>
-    </div>
-
-  </div>
   <script src="popup.js"></script>
 </body>
 </html>
