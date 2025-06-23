@@ -1,13 +1,9 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
   color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .dark-mode {
@@ -15,18 +11,25 @@ body {
   color: #f1f1f1;
 }
 
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .container {
-  max-width: 350px;
-  width: 100%;
   padding: 16px;
+  flex-grow: 1;
 }
 
 .heading {
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
   color: #007bff;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .dark-mode .heading {
@@ -55,6 +58,8 @@ body {
   flex: 1;
   padding: 6px;
   font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .copy-btn {
@@ -96,13 +101,20 @@ body {
 
 .footer {
   text-align: center;
+  padding: 10px 0;
   font-size: 12px;
-  margin-top: 12px;
-  padding-top: 8px;
   color: #555;
-  width: 100%;
+  border-top: 1px solid #ccc;
 }
 
 .dark-mode .footer {
   color: #aaa;
+  border-color: #444;
+}
+
+/* Dark mode input fix */
+.dark-mode input {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
 }
