@@ -9,71 +9,57 @@
 </head>
 <body>
   <div class="wrapper">
-    <h2 class="title"></h2>
 
+    <!-- 🔷 Heading -->
+    <h2 class="heading">Calculate Your SL</h2>
+
+    <!-- 🧮 Calculator Container -->
     <div class="container">
 
-      <!-- ✅ Strick input (accepts text) -->
+      <!-- Strick -->
       <div class="row">
         <label for="strick">Strick</label>
         <div class="input-wrapper">
           <input type="text" id="strick" />
-          <button class="copy-btn" id="copy-strick">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-strick"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
-      <!-- ✅ Entry Price -->
+      <!-- Entry Price -->
       <div class="row">
         <label for="entryPrice">Entry Price</label>
         <div class="input-wrapper">
           <input type="number" id="entryPrice" />
-          <button class="copy-btn" id="copy-entryPrice">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-entryPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
-      <!-- ✅ Hidden section -->
+      <!-- SL & Target Points Section -->
       <div id="points-section">
         <div class="row">
           <label for="slPoints">SL Points</label>
-          <div class="input-wrapper">
-            <input type="number" id="slPoints" />
-          </div>
+          <div class="input-wrapper"><input type="number" id="slPoints" /></div>
         </div>
-
         <div class="row">
           <label for="targetPoints">Target Points</label>
-          <div class="input-wrapper">
-            <input type="number" id="targetPoints" />
-          </div>
+          <div class="input-wrapper"><input type="number" id="targetPoints" /></div>
         </div>
-
         <div class="row">
           <label for="tslPoints">TSL Points</label>
-          <div class="input-wrapper">
-            <input type="number" id="tslPoints" />
-          </div>
+          <div class="input-wrapper"><input type="number" id="tslPoints" /></div>
         </div>
-
         <div class="row">
           <label for="tslTriggerPoints">TSL Trigger Points</label>
-          <div class="input-wrapper">
-            <input type="number" id="tslTriggerPoints" />
-          </div>
+          <div class="input-wrapper"><input type="number" id="tslTriggerPoints" /></div>
         </div>
       </div>
 
-      <!-- ✅ Output fields -->
+      <!-- Output fields -->
       <div class="row">
         <label for="slPrice">SL Price</label>
         <div class="input-wrapper">
           <input type="text" id="slPrice" readonly tabindex="-1" />
-          <button class="copy-btn" id="copy-slPrice">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-slPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
@@ -81,9 +67,7 @@
         <label for="targetPrice">Target Price</label>
         <div class="input-wrapper">
           <input type="text" id="targetPrice" readonly tabindex="-1" />
-          <button class="copy-btn" id="copy-targetPrice">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-targetPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
@@ -91,9 +75,7 @@
         <label for="tslPrice">TSL</label>
         <div class="input-wrapper">
           <input type="text" id="tslPrice" readonly tabindex="-1" />
-          <button class="copy-btn" id="copy-tslPrice">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-tslPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
@@ -101,13 +83,11 @@
         <label for="tslTriggerPrice">TSL Trigger</label>
         <div class="input-wrapper">
           <input type="text" id="tslTriggerPrice" readonly tabindex="-1" />
-          <button class="copy-btn" id="copy-tslTriggerPrice">
-            <i class="fas fa-copy"></i>
-          </button>
+          <button class="copy-btn" id="copy-tslTriggerPrice"><i class="fas fa-copy"></i></button>
         </div>
       </div>
 
-      <!-- ✅ Toggle buttons -->
+      <!-- Toggle buttons -->
       <div class="toggle-section">
         <button id="toggle-mode" class="toggle-button">
           <i id="mode-icon" class="fas fa-moon"></i>
@@ -118,12 +98,10 @@
       </div>
     </div>
 
-    <!-- ✅ Footer -->
-    <footer class="footer">
-      All rights reserved © Abhishek Bunkar 2025
-    </footer>
-  </div>
+    <!-- 🔻 Footer -->
+    <footer class="footer">All rights reserved © Abhishek Bunkar 2025</footer>
 
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
