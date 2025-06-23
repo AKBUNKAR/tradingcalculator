@@ -9,7 +9,13 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ Strick input -->
+    <!-- ✅ Logo & Tagline -->
+    <div class="logo-container">
+      <img src="https://i.ibb.co/nmvtcY2/logo.png" alt="Logo" class="logo" />
+      <div class="tagline">Calculate Your SL</div>
+    </div>
+
+    <!-- ✅ Strick -->
     <div class="row">
       <label for="strick">Strick</label>
       <div class="input-wrapper">
@@ -31,7 +37,7 @@
       </div>
     </div>
 
-    <!-- ✅ Hidden section -->
+    <!-- ✅ Hidden Points Section -->
     <div id="points-section">
       <div class="row">
         <label for="slPoints">SL Points</label>
@@ -62,7 +68,7 @@
       </div>
     </div>
 
-    <!-- ✅ SL Price -->
+    <!-- ✅ Output Fields -->
     <div class="row">
       <label for="slPrice">SL Price</label>
       <div class="input-wrapper">
@@ -73,7 +79,6 @@
       </div>
     </div>
 
-    <!-- ✅ Target Price -->
     <div class="row">
       <label for="targetPrice">Target Price</label>
       <div class="input-wrapper">
@@ -84,7 +89,6 @@
       </div>
     </div>
 
-    <!-- ✅ TSL -->
     <div class="row">
       <label for="tslPrice">TSL</label>
       <div class="input-wrapper">
@@ -95,7 +99,6 @@
       </div>
     </div>
 
-    <!-- ✅ TSL Trigger -->
     <div class="row">
       <label for="tslTriggerPrice">TSL Trigger</label>
       <div class="input-wrapper">
@@ -106,7 +109,7 @@
       </div>
     </div>
 
-    <!-- ✅ Toggle buttons -->
+    <!-- ✅ Toggle Buttons -->
     <div class="toggle-section">
       <button id="toggle-mode" class="toggle-button">
         <i id="mode-icon" class="fas fa-moon"></i>
@@ -115,8 +118,11 @@
         <i id="toggle-icon" class="fas fa-arrow-down"></i>
       </button>
     </div>
-
   </div>
+
+  <!-- ✅ Footer -->
+  <div class="footer" id="footer"></div>
+
   <script src="popup.js"></script>
 </body>
 </html>
